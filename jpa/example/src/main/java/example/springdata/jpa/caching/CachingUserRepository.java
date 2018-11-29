@@ -35,5 +35,4 @@ public interface CachingUserRepository extends CrudRepository<User, Long> {
 	@Cacheable("byUsername")
 	User findByUsername(String username);
 	
-	User findByPassword(String password);
 }
