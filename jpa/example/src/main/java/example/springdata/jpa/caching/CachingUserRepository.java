@@ -31,7 +31,9 @@ public interface CachingUserRepository extends CrudRepository<User, Long> {
 	@Override
 	@CacheEvict(value = "byUsername", key = "#p0.username")
 	<S extends User> S save(S entity);
- 
+	//测试一下
 	@Cacheable("byUsername")
 	User findByUsername(String username);
+	
+	User findByPassword(String password);
 }
